@@ -27,7 +27,7 @@ server.listen(8080, () =>
   console.log("Server running on http://localhost:8080/"),
 );
 
-const MONGO_URL = process.env.MONGO_URI as string;
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
