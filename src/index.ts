@@ -30,6 +30,6 @@ server.listen(8080, () =>
 const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL);
+mongoose.connect(MONGO_URI);
 
 mongoose.connection.on("error", (error: Error) => console.log(error));
