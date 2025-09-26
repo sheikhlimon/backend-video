@@ -1,3 +1,4 @@
+import "./env";
 import express from "express";
 import http from "http";
 import bodyParser from "body-parser";
@@ -5,9 +6,7 @@ import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
-
-dotenv.config(); // load .env variables
+import router from "./router";
 
 const app = express();
 
@@ -28,8 +27,16 @@ server.listen(8080, () =>
 );
 
 const MONGO_URI = process.env.MONGO_URI;
+if (!MONGO_URI) {
+  throw new Error("MONGO_URI env variable is required");
+}
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGO_URI);
+mongoose
+  .connect(MONGO_URI)
+  .then(() => console.log("connected to MongoDB"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 mongoose.connection.on("error", (error: Error) => console.log(error));
+
+app.use("/", router());

@@ -1,6 +1,9 @@
 import crypto from "crypto";
 
 const SECRET = process.env.SECRET;
+if (!SECRET) {
+  throw new Error("SECRET env variable is required");
+}
 
 export const random = () => crypto.randomBytes(128).toString("base64");
 
