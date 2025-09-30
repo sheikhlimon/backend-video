@@ -1,6 +1,6 @@
-# REST API with Node.js, Express, TypeScript & MongoDB
+## REST API with Node.js, Express, TypeScript & MongoDB
 
-### A simple REST API built with **Node.js, Express, MongoDB, and TypeScript**, featuring user authentication, protected routes, and user management endpoints. This project is designed as a learning exercise to understand backend concepts such as middleware, authentication, and CRUD operations.
+#### A simple REST API built with **Node.js, Express, MongoDB, and TypeScript**, featuring user authentication, protected routes, and user management endpoints. This project is designed as a learning exercise to understand backend concepts such as middleware, authentication, and CRUD operations.
 
 ## Features
 
