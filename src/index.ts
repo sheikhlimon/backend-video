@@ -26,7 +26,7 @@ server.listen(8080, () =>
   console.log("Server running on http://localhost:8080/"),
 );
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI as string;
 if (!MONGO_URI) {
   throw new Error("MONGO_URI env variable is required");
 }

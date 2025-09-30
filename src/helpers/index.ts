@@ -1,6 +1,6 @@
 import crypto from "crypto";
 
-const SECRET = process.env.SECRET;
+const SECRET = process.env.SECRET as string;
 if (!SECRET) {
   throw new Error("SECRET env variable is required");
 }
